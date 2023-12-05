@@ -1,0 +1,267 @@
+[
+  {
+    "ID": 1,
+    "Name": "Compromised",
+    "Description": "Web pages that have been compromised by someone other than the site owner"
+  },
+  {
+    "ID": 2,
+    "Name": "Criminal Skills/Hacking",
+    "Description": "Activities that violate human rights including murder"
+  },
+  {
+    "ID": 3,
+    "Name": "Hate Speech",
+    "Description": "Web pages that promote extreme right/left wing groups"
+  },
+  {
+    "ID": 4,
+    "Name": "Illegal Drugs",
+    "Description": "Web pages that promote the use or information of common illegal drugs and the misuse of prescription drugs and compounds"
+  },
+  {
+    "ID": 5,
+    "Name": "Phishing/Fraud",
+    "Description": "Manipulated web pages and emails used for fraudulent purposes"
+  },
+  {
+    "ID": 6,
+    "Name": "Spyware and Malicious Sites",
+    "Description": "Sites or software that installs on a user's computer with the intent to collect information or make system changes without the user's consent."
+  },
+  {
+    "ID": 7,
+    "Name": "Nudity",
+    "Description": "Web pages that display full or partial nudity with no sexual references or intent"
+  },
+  {
+    "ID": 8,
+    "Name": "Mature",
+    "Description": "Sites not appropriate for children. Includes sites with content about alternative lifetyles"
+  },
+  {
+    "ID": 9,
+    "Name": "Pornography/Sex",
+    "Description": "Explicit sexual content unsuitable for persons under the age of 18"
+  },
+  {
+    "ID": 10,
+    "Name": "Violence",
+    "Description": "Web pages that promote questionable activities such as violence and militancy"
+  },
+  {
+    "ID": 11,
+    "Name": "Weapons",
+    "Description": "Web pages that include guns and weapons when not used in a violent manner"
+  },
+  {
+    "ID": 12,
+    "Name": "Anonymizer",
+    "Description": "Web pages that promote proxies and anonymizers for surfing websites with the intent of circumventing filters"
+  },
+  {
+    "ID": 13,
+    "Name": "Computers and Technology",
+    "Description": "Sites with information about computers"
+  },
+  {
+    "ID": 14,
+    "Name": "Download Sites",
+    "Description": "Shareware"
+  },
+  {
+    "ID": 15,
+    "Name": "Translator",
+    "Description": "Web pages which translate languages from one to another"
+  },
+  {
+    "ID": 16,
+    "Name": "Alcohol",
+    "Description": "Web pages that promote"
+  },
+  {
+    "ID": 17,
+    "Name": "Health",
+    "Description": "Personal health and medical services including sites with information on equipment"
+  },
+  {
+    "ID": 18,
+    "Name": "Pharmacy",
+    "Description": "Web pages which include prescribed medications and information about approved drugs and their medical use"
+  },
+  {
+    "ID": 19,
+    "Name": "Tobacco",
+    "Description": "Web pages promoting the use of tobacco related products (cigarettes"
+  },
+  {
+    "ID": 20,
+    "Name": "Gambling",
+    "Description": "Web pages which promote gambling"
+  },
+  {
+    "ID": 21,
+    "Name": "Games",
+    "Description": "Web pages consisting of computer games"
+  },
+  {
+    "ID": 22,
+    "Name": "Cars/Transportation",
+    "Description": "Vehicles including selling"
+  },
+  {
+    "ID": 23,
+    "Name": "Dating & Relationships",
+    "Description": "Web pages that promote relationships such as dating and marriage"
+  },
+  {
+    "ID": 24,
+    "Name": "Home/Leisure",
+    "Description": "Sites with information about home improvement and decorating"
+  },
+  {
+    "ID": 25,
+    "Name": "Personal Webpages",
+    "Description": "Websites about or hosted by personal individuals. Communication through blogs and guestbook servers. Information on personal hobbies and activities."
+  },
+  {
+    "ID": 26,
+    "Name": "Restaurants",
+    "Description": "Food"
+  },
+  {
+    "ID": 27,
+    "Name": "Sports and Recreation",
+    "Description": "Sports teams"
+  },
+  {
+    "ID": 28,
+    "Name": "Travel",
+    "Description": "Web pages which provide travel and tourism information"
+  },
+  {
+    "ID": 29,
+    "Name": "Government",
+    "Description": "Government organizations"
+  },
+  {
+    "ID": 30,
+    "Name": "Military",
+    "Description": "Web pages sponsored by the armed forces and government controlled agencies"
+  },
+  {
+    "ID": 31,
+    "Name": "Non-profits",
+    "Description": "Clubs"
+  },
+  {
+    "ID": 32,
+    "Name": "Politics and Law",
+    "Description": "Sites that promote a political parties and interest groups. Information on elections and legislation. Sites that offer legal information and advice."
+  },
+  {
+    "ID": 33,
+    "Name": "Religion",
+    "Description": "Religious sites and information. Includes Sects"
+  },
+  {
+    "ID": 34,
+    "Name": "Education",
+    "Description": "Educational institutions and schools. Educational and reference materials including dictionaries"
+  },
+  {
+    "ID": 35,
+    "Name": "Art",
+    "Description": "Theater"
+  },
+  {
+    "ID": 36,
+    "Name": "Entertainment and Videos",
+    "Description": "Web sites for videos"
+  },
+  {
+    "ID": 37,
+    "Name": "Humor",
+    "Description": "Web pages which include comics"
+  },
+  {
+    "ID": 38,
+    "Name": "Music",
+    "Description": "Web pages that include internet radio and streaming media"
+  },
+  {
+    "ID": 39,
+    "Name": "News",
+    "Description": "Web pages with general news information such as newspapers and magazines"
+  },
+  {
+    "ID": 40,
+    "Name": "Finance",
+    "Description": "Bank and insurance companies and other financial institutions. Active trading of certificates and stocks."
+  },
+  {
+    "ID": 42,
+    "Name": "Shopping",
+    "Description": "Online shops"
+  },
+  {
+    "ID": 43,
+    "Name": "Chat/IM",
+    "Description": "Communication through chat or IM services as well as sites with information about IM communication or chatrooms."
+  },
+  {
+    "ID": 44,
+    "Name": "Community Sites",
+    "Description": "Newsgroup sites and posting including forums and bulletin boards."
+  },
+  {
+    "ID": 45,
+    "Name": "Social Networking",
+    "Description": "Social networking web pages and online communities built around communities of people where users \"connect\" to other users"
+  },
+  {
+    "ID": 46,
+    "Name": "Web-based Email",
+    "Description": "Web pages which enable users to send and/or receive email through a web accessible email account"
+  },
+  {
+    "ID": 47,
+    "Name": "Portal Sites",
+    "Description": "General web pages with customized personal portals"
+  },
+  {
+    "ID": 48,
+    "Name": "Search Engines",
+    "Description": "Web pages supporting the searching of web"
+  },
+  {
+    "ID": 49,
+    "Name": "Online Ads",
+    "Description": "Web pages strictly devoted to advertising graphics"
+  },
+  {
+    "ID": 50,
+    "Name": "Business/Services",
+    "Description": "General business."
+  },
+  {
+    "ID": 51,
+    "Name": "Job Search",
+    "Description": "Web pages devoted to job searches or agencies"
+  },
+  {
+    "ID": 52,
+    "Name": "Real Estate",
+    "Description": "Web pages possessing information about renting"
+  },
+  {
+    "ID": 53,
+    "Name": "Spam",
+    "Description": "Products and web pages promoted through spam techniques"
+  },
+  {
+    "ID": 54,
+    "Name": "Miscellaneous",
+    "Description": "Web pages that do not clearly fall into any other category"
+  }
+]

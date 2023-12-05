@@ -1,0 +1,187 @@
+[
+  {
+    "ID": 2,
+    "Name": "Tội phạm/Hacking",
+    "Description": "Những web vi phạm pháp luật, ảnh hưởng nhân quyền. Ví dụ: Giết người, hacking,..."
+  },
+  {
+    "ID": 4,
+    "Name": "Chất kích thích/ma túy",
+    "Description": "Web có chứa nội dung buôn bán/hướng dẫn sử dụng những chất cấm"
+  },
+  {
+    "ID": 5,
+    "Name": "Web lừa đảo/mạo danh",
+    "Description": "Web lừa đảo/mạo danh (Phising/Fraud)"
+  },
+  {
+    "ID": 6,
+    "Name": "Web chứa mã độc",
+    "Description": "Web chứa mã độc"
+  },
+  {
+    "ID": 7,
+    "Name": "Khỏa thân",
+    "Description": "Web chứa hình ảnh khỏa thân bất kể hình thức là cố ý hay nghệ thuật"
+  },
+  {
+    "ID": 8,
+    "Name": "Người lớn",
+    "Description": "Web chứa nội dung không thích hợp cho trẻ em"
+  },
+  {
+    "ID": 9,
+    "Name": "Khiêu dâm",
+    "Description": "Web khiêu dâm"
+  },
+  {
+    "ID": 10,
+    "Name": "Bạo lực",
+    "Description": "Web chứa hình ảnh/video bạo lực, hoặc cổ súy bạo lực"
+  },
+  {
+    "ID": 11,
+    "Name": "Vũ khí",
+    "Description": "Web buôn bán các loại vũ khí"
+  },
+  {
+    "ID": 13,
+    "Name": "Công nghệ thông tin",
+    "Description": "Website công nghệ thông tin"
+  },
+  {
+    "ID": 14,
+    "Name": "Lưu trữ file",
+    "Description": "Ví dụ: Mediafile, Shareware, One Drive, Google Drive,..."
+  },
+  {
+    "ID": 15,
+    "Name": "Dịch thuật",
+    "Description": "Web dịch thuật"
+  },
+  {
+    "ID": 16,
+    "Name": "Rượu bia",
+    "Description": "Web quảng cáo hoặc buôn bán rượu bia"
+  },
+  {
+    "ID": 17,
+    "Name": "Sức khỏe",
+    "Description": "Web liên quan sức khỏe cá nhân hoặc dịch vụ y tế"
+  },
+  {
+    "ID": 18,
+    "Name": "Nhà thuốc",
+    "Description": "Web nhà thuốc, buôn bán thuốc"
+  },
+  {
+    "ID": 19,
+    "Name": "Thuốc lá",
+    "Description": "Web liên quan tới thuốc lá, xì gà,..."
+  },
+  {
+    "ID": 20,
+    "Name": "Cờ bạc",
+    "Description": "Web cờ bạc"
+  },
+  {
+    "ID": 21,
+    "Name": "Games",
+    "Description": "Web chơi game"
+  },
+  {
+    "ID": 23,
+    "Name": "Hẹn hò",
+    "Description": "Web hẹn hò, hoặc cung cấp thông tin về hẹn hò, kết hôn,..."
+  },
+  {
+    "ID": 25,
+    "Name": "Blog cá nhân",
+    "Description": "Những trang web được tổ chức bởi một cá nhân, dưới hình thức 1 blog, để chia sẻ về lối sống, suy nghĩ cá nhân họ."
+  },
+  {
+    "ID": 26,
+    "Name": "Nhà hàng",
+    "Description": "Food"
+  },
+  {
+    "ID": 27,
+    "Name": "Thể thao",
+    "Description": "Sports teams"
+  },
+  {
+    "ID": 28,
+    "Name": "Du lịch",
+    "Description": "Web du lịch"
+  },
+  {
+    "ID": 29,
+    "Name": "Chính phủ",
+    "Description": "Các trang web thông tin chính phủ"
+  },
+  {
+    "ID": 32,
+    "Name": "Chính trị",
+    "Description": "Trang web nói về những vấn đề chính trị xã hội."
+  },
+  {
+    "ID": 33,
+    "Name": "Tôn giáo",
+    "Description": "Web tôn giáo"
+  },
+  {
+    "ID": 34,
+    "Name": "Giáo dục",
+    "Description": "Web liên quan giáo dục"
+  },
+  {
+    "ID": 35,
+    "Name": "Giải trí/Nghệ thuật",
+    "Description": "Ví dụ: Rạp xiếc, rạp phim"
+  },
+  {
+    "ID": 39,
+    "Name": "Báo",
+    "Description": "Các trang báo điện tử"
+  },
+  {
+    "ID": 40,
+    "Name": "Tài chính",
+    "Description": "Trang web liên quan tài chính"
+  },
+  {
+    "ID": 42,
+    "Name": "Mua sắm",
+    "Description": "Online shopping"
+  },
+  {
+    "ID": 43,
+    "Name": "Chat/IM",
+    "Description": "Dịch vụ/trang web nhắn tin"
+  },
+  {
+    "ID": 44,
+    "Name": "Diễn đàn",
+    "Description": "Web diễn đàn"
+  },
+  {
+    "ID": 45,
+    "Name": "Mạng xã hội",
+    "Description": "Instagram, Facebook,..."
+  },
+  {
+    "ID": 48,
+    "Name": "Công cụ tìm kiếm",
+    "Description": "Ví dụ: Google, Bing, Yahoo Search..."
+  },
+  {
+    "ID": 51,
+    "Name": "Tìm việc làm",
+    "Description": "Web tìm việc làm"
+  },
+  {
+    "ID": 52,
+    "Name": "Bất động sản",
+    "Description": "Web bất động sản"
+  }
+]

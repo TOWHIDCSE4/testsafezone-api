@@ -1,0 +1,71 @@
+getSubscription:
+  handler: subscriptions/getSubscription.handler
+  events:
+    - http:
+        path: /v1/subscriptions
+        method: GET
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+unsubscribe:
+  handler: subscriptions/unsubscribe.handler
+  events:
+    - http:
+        path: /v1/subscriptions/unsubscribe
+        method: POST
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+subscriptionPlanCreate:
+  handler: subscriptions/plans/create.handler
+  events:
+    - http:
+        path: /v1/subscriptions/plans
+        method: POST
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+subscriptionPlanGet:
+  handler: subscriptions/plans/get.handler
+  events:
+    - http:
+        path: /v1/subscriptions/plans
+        method: GET
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+subscriptionPlanUpdate:
+  handler: subscriptions/plans/update.handler
+  events:
+    - http:
+        path: /v1/subscriptions/plans/{planId}
+        method: PUT
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+subscriptionPlanDelete:
+  handler: subscriptions/plans/delete.handler
+  events:
+    - http:
+        path: /v1/subscriptions/plans/{planId}
+        method: DELETE
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer

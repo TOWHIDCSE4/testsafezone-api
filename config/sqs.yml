@@ -1,0 +1,5 @@
+Resources:
+  PaymentQueue:
+    Type: 'AWS::SQS::Queue'
+    Properties:
+      QueueName: 'PaymentQueue'

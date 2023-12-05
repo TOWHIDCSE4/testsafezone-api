@@ -1,0 +1,47 @@
+getNotificationById:
+  handler: notification_mobile/index.getNotificationById
+  events:
+    - http:
+        path: /v1/notification-api/get-notification/{id}
+        method: GET
+        cors: true
+
+getAllNotificationByUserId:
+  handler: notification_mobile/index.getAllNotificationByUserId
+  events:
+    - http:
+        path: /v1/notification-api/get-all-notification/{user_id}
+        method: GET
+        cors: true
+
+getCountNotificationUnseen:
+  handler: notification_mobile/index.getCountNotificationUnseen
+  events:
+    - http:
+        path: /v1/notification-api/get-count-notification-unseen/{user_id}
+        method: GET
+        cors: true
+
+markSeenNotification:
+  handler: notification_mobile/index.markSeenNotification
+  events:
+    - http:
+        path: /v1/notification-api/mark-seen-notification
+        method: POST
+        cors: true
+
+registerFCMToken:
+  handler: notification_mobile/index.registerFCMToken
+  events:
+    - http:
+        path: /v1/notification-api/register-fcm-token
+        method: POST
+        cors: true
+
+cancelFCMToken:
+  handler: notification_mobile/index.cancelFCMToken
+  events:
+    - http:
+        path: /v1/notification-api/cancel-fcm-token
+        method: POST
+        cors: true

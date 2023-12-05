@@ -1,0 +1,117 @@
+org: safezoneapp
+app: safe-zone-app
+service: safe-zone-app
+useDotenv: true
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: ap-southeast-1
+  deploymentMethod: direct
+  timeout: 60
+  versionFunctions: true
+
+  # VPC Configuration
+  # vpc:
+  #   securityGroupIds:
+  #     - !GetAtt NatGatewayLambdaSecurityGroup.GroupId
+  #   subnetIds:
+  #     - !Ref SubnetAPrivate
+  #     - !Ref SubnetBPrivate
+  iam:
+    role:
+      statements:
+        # Allow functions to list all buckets
+        - Effect: Allow
+          Action:
+            - 'ec2:DescribeNetworkInterfaces'
+            - 'ec2:CreateNetworkInterface'
+            - 'ec2:DeleteNetworkInterface'
+            - 'ec2:DescribeInstances'
+            - 'ec2:AttachNetworkInterface'
+          Resource: '*'
+        - Effect: Allow
+          Action:
+            - 's3:PutObjectAcl'
+            - 's3:PutObject'
+            - 's3:GetObjectAcl'
+            - 's3:ListBucket'
+            - 's3:GetBucketLocation'
+          Resource: '*'
+        - Effect: Allow
+          Action:
+            - 'cognito-identity:*'
+            - 'cognito-idp:*'
+          Resource: '*'
+        - Effect: Allow
+          Action:
+            - 'ses:*'
+          Resource: '*'
+  environment:
+    AWS_COGNITO_REGION: ap-southeast-1
+    ZVELO_CLOUD_USERNAME: ${param:ZVELO_CLOUD_USERNAME, ''}
+    ZVELO_CLOUD_PASSWORD: ${param:ZVELO_CLOUD_PASSWORD, ''}
+    MONGODB_URI: ${param:MONGODB_URI, 'mongodb://localhost:27017/'}
+    AWS_GATEWAY_API_URL: !Sub 'https://${ApiGatewayRestApi}.execute-api.${aws:region}.amazonaws.com/${sls:stage}'
+    APPOTA_PARTNER_CODE: ${param:APPOTA_PARTNER_CODE, 'APPOTAPAY'}
+    APPOTA_API_KEY: ${param:APPOTA_API_KEY, 'FJcmF8uj2ISveL5FvvNk4pnp8xrhINz8'}
+    APPOTA_SECRET_KEY: ${param:APPOTA_SECRET_KEY, 'XAonJgy14YhtePEITXhyBS2unjfJLAV3'}
+    APPOTA_ENDPOINT: ${param:APPOTA_ENDPOINT, 'https://payment.dev.appotapay.com/api'}
+    SAFE_ZONE_PORTAL_URL: ${param:SAFE_ZONE_PORTAL_URL, ''}
+    S3_PUBLIC_BUCKET_NAME: !Ref AttachmentsBucket
+    SERVER_TYPE: ${param:SAFE_ZONE_SERVER_TYPE, 'local'}
+    AWS_COGNITO_USER_POOL_ID: ${cf:safe-zone-app-${sls:stage}.UserPoolId, 'ap-southeast-1_qQNaEBiSk'}
+    AWS_COGNITO_APP_CLIENT_ID: ${cf:safe-zone-app-${sls:stage}.UserPoolClientId, '1eidhbgo28qsa36nlri9pffplc'}
+    S3_PUBLIC_BUCKET_DOMAIN: ${cf:safe-zone-app-${sls:stage}.AttachmentsBucketSecureURL, 'xxxxx'}
+    S3_ASSETS_BUCKET_DOMAIN: ${cf:safe-zone-app-${sls:stage}.AssetsBucketSecureURL, 'xxxxx'}
+    SES_EMAIL: no-reply@safezone.com.vn
+    OPEN_AI_URI: ${param:OPEN_AI_URI, 'https://api.openai.com'}
+
+plugins:
+  - serverless-functions-base-path
+  - serverless-webpack
+  - serverless-export-env
+  - serverless-mongodb-local
+  - serverless-s3-sync
+  - serverless-offline
+  - serverless-offline-scheduler
+  - serverless-prune-plugin
+resources:
+  - ${file(config/apigateway-authorizer.yml)}
+  - ${file(config/cognito.yml)}
+  - ${file(config/s3-bucket.yml)}
+  # - ${file(config/vpc.yml)}
+
+custom:
+  functionsBasePath: src/handlers
+  serverless-offline:
+    port: 4000
+  webpack:
+    packager: npm
+    includeModules: true
+  mongodb:
+    stages: # If you only want to use MongoDB Local in particular stages, declare them here as a string or regex
+      - dev
+      - 'dev-\d+'
+    instance: # MongoMemoryServer() options and defaults https://github.com/nodkz/mongodb-memory-server#available-options-for-mongomemoryserver
+      port: 6868
+      dbName: SafeZone
+      dbPath: ./db
+      storageEngine: wiredTiger # Set with `dbPath` to persists the database between instantiations
+  s3Sync:
+    - bucketNameKey: AssetsBucketName
+      localDir: src/assets # required
+  prune:
+    automatic: true
+    number: 3
+
+functions:
+  - ${file(./src/handlers/auth/serverless.yml)}
+  - ${file(./src/handlers/users/serverless.yml)}
+  - ${file(./src/handlers/zvelo/serverless.yml)}
+  - ${file(./src/handlers/subscriptions/serverless.yml)}
+  - ${file(./src/handlers/subscribe/serverless.yml)}
+  - ${file(./src/handlers/orders/serverless.yml)}
+  - ${file(./src/handlers/cron_jobs/serverless.yml)}
+  - ${file(./src/handlers/safezone/serverless.yml)}
+  - ${file(./src/handlers/notification_mobile/serverless.yml)}

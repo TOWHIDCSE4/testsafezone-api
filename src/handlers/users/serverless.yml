@@ -1,0 +1,293 @@
+# User APIs
+userMe:
+  handler: users/index.me
+  events:
+    - http:
+        path: /v1/user/me
+        method: GET
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+# Children APIs
+userAddChild:
+  handler: users/index.addChild
+  events:
+    - http:
+        path: /v1/users/{parentId}/children
+        method: POST
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+userGetChildren:
+  handler: users/index.getChildren
+  events:
+    - http:
+        path: /v1/users/{parentId}/children
+        method: GET
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+# Device
+deviceAdd:
+  handler: users/index.addDevice
+  events:
+    - http:
+        path: /v1/users/{parentId}/devices
+        method: POST
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+deviceGet:
+  handler: users/index.getDevices
+  events:
+    - http:
+        path: /v1/users/{parentId}/devices
+        method: GET
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+# Rules APIs
+rulesGetRestrictedTime:
+  handler: users/index.getRestrictedTimeRules
+  events:
+    - http:
+        path: /v1/users/{parentId}/children/{childId}/rules/restricted-times
+        method: GET
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+rulesUpdateRestrictedTime:
+  handler: users/index.updateRestrictedTimeRules
+  events:
+    - http:
+        path: /v1/users/{parentId}/children/{childId}/rules/restricted-times
+        method: PATCH
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+rulesGetDailyTimeLimit:
+  handler: users/index.getDailyTimeLimit
+  events:
+    - http:
+        path: /v1/users/{parentId}/children/{childId}/rules/daily-time-limit
+        method: GET
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+rulesUpdateDailyTimeLimit:
+  handler: users/index.updateDailyTimeLimit
+  events:
+    - http:
+        path: /v1/users/{parentId}/children/{childId}/rules/daily-time-limit
+        method: PATCH
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+rulesGetWebFiltering:
+  handler: users/index.getWebFilteringRules
+  events:
+    - http:
+        path: /v1/users/{parentId}/children/{childId}/rules/web-filtering
+        method: GET
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+rulesUpdateWebFiltering:
+  handler: users/index.updateWebFilteringRules
+  events:
+    - http:
+        path: /v1/users/{parentId}/children/{childId}/rules/web-filtering
+        method: PATCH
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+rulesGetActivityControlRules:
+  handler: users/index.getActivityControlRules
+  events:
+    - http:
+        path: /v1/users/{parentId}/children/{childId}/rules/activity-control
+        method: GET
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+rulesAddActivityControlRules:
+  handler: users/index.addActivityControlRules
+  events:
+    - http:
+        path: /v1/users/{parentId}/children/{childId}/rules/activity-control
+        method: POST
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+# Activities API
+childrenGetActivities:
+  handler: users/index.getActivities
+  events:
+    - http:
+        path: /v1/users/{parentId}/children/{childId}/activities
+        method: GET
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+childrenAddActivity:
+  handler: users/index.addActivity
+  events:
+    - http:
+        path: /v1/users/{parentId}/children/{childId}/activities
+        method: POST
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+childrenAddBatchActivities:
+  handler: users/index.addBatchActivities
+  events:
+    - http:
+        path: /v1/users/{parentId}/children/{childId}/activities/batch
+        method: POST
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+childrenUpdateBatchActivities:
+  handler: users/index.updateBatchActivities
+  events:
+    - http:
+        path: /v1/users/{parentId}/children/{childId}/activities/batch
+        method: PUT
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+childrenUpdateActivity:
+  handler: users/index.updateActivity
+  events:
+    - http:
+        path: /v1/users/{parentId}/children/{childId}/activities/{activityId}
+        method: PUT
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+childrenRemoveActivities:
+  handler: users/index.removeActivities
+  events:
+    - http:
+        path: /v1/users/{parentId}/children/{childId}/activities
+        method: DELETE
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+childrenGetDevices:
+  handler: users/children/devices/getDevices.handler
+  events:
+    - http:
+        path: /v1/users/{parentId}/children/{childId}/devices
+        method: GET
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+childrenRemoveDevices:
+  handler: users/devices/removeDevice.handler
+  events:
+    - http:
+        path: /v1/users/{parentId}/devices/{deviceId}
+        method: DELETE
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+# Information API
+childrenUpdateEducationInfo:
+  handler: users/index.updateEducationInfo
+  events:
+    - http:
+        path: /v1/users/{parentId}/children/{childId}/information/update-education-info
+        method: PUT
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+getAllSubject:
+  handler: users/index.getAllSubject
+  events:
+    - http:
+        path: /v1/users/{parentId}/children/{childId}/information/get-all-subject
+        method: GET
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+mapQuizAiToChildren:
+  handler: users/index.mapQuizAiToChildren
+  events:
+    - http:
+        path: /v1/users/{parentId}/children/{childId}/ai/quiz-ai
+        method: GET
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer

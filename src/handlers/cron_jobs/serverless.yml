@@ -1,0 +1,78 @@
+# emailReportingScheduleForParentAccount:
+#   handler: cron_jobs/index.reportEmailToParentAccount
+#   events:
+#     - schedule: rate(2 minutes)
+
+dailyReport:
+  handler: cron_jobs/index.dailyReport
+  events:
+    - schedule: cron(0 15 * * ? *)
+  timeout: 900
+
+apiDailyReport:
+  handler: cron_jobs/index.apiDailyReport
+  events:
+    - http:
+        path: /v1/cron-jobs/daily-report
+        method: POST
+        cors: true
+
+reportAccessToBlockedWebsitesOrApps:
+  handler: cron_jobs/index.reportAccessToBlockedWebsitesOrApps
+  events:
+    - schedule: rate(1 hour)
+  timeout: 900
+
+apiReportAccessToBlockedWebsitesOrApps:
+  handler: cron_jobs/index.apiReportAccessToBlockedWebsitesOrApps
+  events:
+    - http:
+        path: /v1/cron-jobs/report-access-to-blocked-websites-or-apps
+        method: POST
+        cors: true
+
+addSubscriptionPeriodForAllUsers:
+  handler: cron_jobs/index.addSubscriptionPeriodForAllUsers
+  events:
+    - http:
+        path: /v1/cron-jobs/add-subscription-period-for-all-users
+        method: POST
+        cors: true
+
+convertStartDateAndEndDateColumn:
+  handler: cron_jobs/index.convertStartDateAndEndDateColumnFromStringToDateOfTableSubscriptions
+  events:
+    - http:
+        path: /v1/cron-jobs/convert-startDate-and-endDate-column-from-string-to-date-of-table-subscriptions
+        method: POST
+        cors: true
+
+notifyMobileAccessToBlockedWebOrApps:
+  handler: cron_jobs/index.notifyMobileAccessToBlockedWebOrApps
+  events:
+    - schedule: rate(1 hour)
+  timeout: 900
+
+apiNotifyMobileAccessToBlockedWebOrApps:
+  handler: cron_jobs/index.apiNotifyMobileAccessToBlockedWebOrApps
+  events:
+    - http:
+        path: /v1/cron-jobs/notify-mobile-access-to-blocked-web-or-apps
+        method: POST
+        cors: true
+
+getGenerationTemplatesNeedCreateHourly:
+  handler: cron_jobs/index.getGenerationTemplatesNeedCreateHourly
+  events:
+    - http:
+        path: /v1/cron-jobs/get-generation-templates-need-create-hourly
+        method: POST
+        cors: true
+
+autoCreateQuizAI:
+  handler: cron_jobs/index.autoCreateQuizAI
+  events:
+    - http:
+        path: /v1/cron-jobs/auto-create-quiz-ai
+        method: POST
+        cors: true

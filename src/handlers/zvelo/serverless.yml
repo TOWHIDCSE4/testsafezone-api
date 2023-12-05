@@ -1,0 +1,23 @@
+zveloGetKey:
+  handler: zvelo/index.getKey
+  events:
+    - http:
+        path: /v1/zvelo/get-key
+        method: GET
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+zveloGetWebCategories:
+  handler: zvelo/index.getWebCategories
+  events:
+    - http:
+        path: /v1/zvelo/get-web-categories
+        method: GET
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer

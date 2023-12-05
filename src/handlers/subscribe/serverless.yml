@@ -1,0 +1,19 @@
+payment:
+  handler: subscribe/payment.handler
+  events:
+    - http:
+        path: /v1/payment
+        method: POST
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+ipn:
+  handler: subscribe/ipn.handler
+  events:
+    - http:
+        path: /v1/ipn
+        method: POST
+        cors: true

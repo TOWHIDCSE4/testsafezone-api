@@ -1,0 +1,100 @@
+Resources:
+  BucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+        PolicyDocument:
+          Statement:
+            - Sid: PublicReadGetObject
+              Effect: Allow
+              Principal: '*'
+              Action:
+                - 's3:GetObject'
+              Resource: !Join
+                - ''
+                - - 'arn:aws:s3:::'
+                  - !Ref AttachmentsBucket
+                  - /*
+        Bucket:
+          Ref: AttachmentsBucket
+
+  AttachmentsBucket:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: 'Retain'
+    Properties:
+      AccessControl: PublicRead
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: false
+        BlockPublicPolicy: false
+        IgnorePublicAcls: false
+        RestrictPublicBuckets: false
+      VersioningConfiguration:
+        Status: Enabled
+      # Set the CORS policy
+      CorsConfiguration:
+        CorsRules:
+          - AllowedOrigins:
+              - '*'
+            AllowedHeaders:
+              - '*'
+            AllowedMethods:
+              - GET
+              - PUT
+              - POST
+              - DELETE
+              - HEAD
+            MaxAge: 3000
+
+  AssetsBucket:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: 'Retain'
+    Properties:
+      AccessControl: PublicRead
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: false
+        BlockPublicPolicy: false
+        IgnorePublicAcls: false
+        RestrictPublicBuckets: false
+      VersioningConfiguration:
+        Status: Enabled
+      # Set the CORS policy
+      CorsConfiguration:
+        CorsRules:
+          - AllowedOrigins:
+              - '*'
+            AllowedHeaders:
+              - '*'
+            AllowedMethods:
+              - GET
+              - PUT
+              - POST
+              - DELETE
+              - HEAD
+            MaxAge: 3000
+
+# Print out the name of the bucket that is created
+Outputs:
+  AttachmentsBucketName:
+    Value:
+      Ref: AttachmentsBucket
+
+  AttachmentsBucketSecureURL:
+    Value: !Join
+      - ''
+      - - 'https://'
+        - !GetAtt
+          - AttachmentsBucket
+          - DomainName
+    Description: Name of S3 bucket to hold website content
+
+  AssetsBucketName:
+    Value:
+      Ref: AssetsBucket
+
+  AssetsBucketSecureURL:
+    Value: !Join
+      - ''
+      - - 'https://'
+        - !GetAtt
+          - AssetsBucket
+          - DomainName
+    Description: Name of S3 bucket to hold backend assets

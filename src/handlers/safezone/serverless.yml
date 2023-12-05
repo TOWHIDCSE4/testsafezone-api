@@ -1,0 +1,47 @@
+createSafeZone:
+  handler: safezone/index.createSafeZone
+  events:
+    - http:
+        path: /v1/safezone/create-safe-zone
+        method: POST
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+getSafeZoneByChild:
+  handler: safezone/index.getSafeZoneByChild
+  events:
+    - http:
+        path: /v1/safezone/child/{childId}/list
+        method: GET
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+updateSafeZone:
+  handler: safezone/index.updateSafeZone
+  events:
+    - http:
+        path: /v1/safezone/{safeZoneId}/update
+        method: PUT
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
+
+deleteSafeZone:
+  handler: safezone/index.deleteSafeZone
+  events:
+    - http:
+        path: /v1/safezone/{safeZoneId}/delete
+        method: DELETE
+        cors: true
+        authorizer:
+          type: COGNITO_USER_POOLS
+          authorizerId:
+            Ref: ApiGatewayAuthorizer
